@@ -8,8 +8,8 @@ This assignment is worth **10%** of your final grade.
 
 {:.msg-warn}
 **Deadlines**: 
-Part A: Thursday March 24, 2021, at 11:00pm Canberra time *sharp*
-Part B: Sunday April 10, 2021, at 11:00pm Canberra time *sharp*
+Part A: Thursday March 24, 2022, at 11:00pm Canberra time *sharp*
+Part B: Sunday April 10, 2022, at 11:00pm Canberra time *sharp*
 Please note that Daylight Savings ends on Sunday 3 April.
 
 {:.msg-info}
