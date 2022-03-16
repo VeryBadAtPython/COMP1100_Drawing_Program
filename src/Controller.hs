@@ -73,3 +73,21 @@ nextColour colour = case colour of
   --    In an equation for `nextTool':
 nextTool :: Tool -> Tool
 nextTool = undefined
+
+--tool = case tool of
+--  (PolygonTool [])                -> CircleTool
+--  (LineTool Nothing)              -> PolygonTool
+--  (CircleTool Nothing)            -> TriangleTool
+--  (TriangleTool Nothing)          -> RectangleTool
+--  (RectangleTool Nothing Nothing) -> CapTool
+--  (CapTool Nothing Nothing)       -> LineTool
+--  tool                            -> tool   
+
+--tool 
+--  |tool == (PolygonTool [])                = CircleTool
+--  |tool == (LineTool Nothing)              = PolygonTool
+--  |tool == (CircleTool Nothing)            = TriangleTool
+--  |tool == (TriangleTool Nothing)          = RectangleTool
+--  |tool == (RectangleTool Nothing Nothing) = CapTool
+--  |tool == (CapTool Nothing Nothing)       = LineTool
+--  |otherwise                               = tool
