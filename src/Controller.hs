@@ -49,10 +49,27 @@ handleEvent event (Model shapes tool colour) =
     where
      currentModel = Model shapes tool colour
 
--- TODO
+-- Task 1B
 nextColour :: ColourName -> ColourName
-nextColour = undefined
+nextColour colour = case colour of
+ Black  -> Model.Red
+ Red    -> Model.Orange
+ Orange -> Model.Yellow
+ Yellow -> Model.Green
+ Green  -> Model.Blue
+ Blue   -> Model.Purple
+ Purple -> Model.White
+ White  -> Model.Black
 
--- TODO
+-- Task 1C
+  -- If holding nothing select next tool in following sequence otherwise return argument unchanged
+  -- Line -> Polygon -> Circle -> Triangle -> Rectangle-> Cap -> Line
+-- (ERROR Recieved) 
+  -- src\Controller.hs:74:44: error:
+  --  * Couldn't match expected type `Tool'
+  --                with actual type `Maybe Point -> Tool'
+  --  * Probable cause: `LineTool' is applied to too few arguments
+  --    In the expression: LineTool
+  --    In an equation for `nextTool':
 nextTool :: Tool -> Tool
 nextTool = undefined
