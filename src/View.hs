@@ -24,9 +24,15 @@ modelToPicture (Model ss t c)
       _ -> "")
     stringToText = lettering . pack
 
--- TODO
+-- Task 1B
 toolToLabel :: Tool -> String
-toolToLabel = undefined
+toolToLabel tool = case tool of
+  LineTool _            -> "Line: click-drag-release"
+  PolygonTool _         -> "Polygon: click 3 or more times then spacebar"
+  CircleTool _          -> "Circle: click-drag-release between centre and circumference"
+  TriangleTool _        -> "Triangle click-drag release for first two corners"
+  RectangleTool _ _     -> "Rectangle: +/- to increase/decrease scaling factor; click-drag realease for first two corners"
+  CapTool _ _           -> "Cap: click-drag-release for circle, then click for cap"
 
 -- TODO
 colourShapesToPicture :: [ColourShape] -> Picture
