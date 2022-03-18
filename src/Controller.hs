@@ -4,6 +4,7 @@ module Controller where
 
 import CodeWorld
 import Model
+import View
 
 import Data.Text (pack, unpack)
 
@@ -52,14 +53,14 @@ handleEvent event (Model shapes tool colour) =
 -- Task 1B
 nextColour :: ColourName -> ColourName
 nextColour colour = case colour of
- Black  -> Model.Red
- Red    -> Model.Orange
- Orange -> Model.Yellow
- Yellow -> Model.Green
- Green  -> Model.Blue
- Blue   -> Model.Purple
- Purple -> Model.White
- White  -> Model.Black
+ Black  -> Red
+ Red    -> Orange
+ Orange -> Yellow
+ Yellow -> Green
+ Green  -> Blue
+ Blue   -> Purple
+ Purple -> White
+ White  -> Black
 
 -- Task 1C
   -- If holding nothing select next tool in following sequence otherwise return argument unchanged
@@ -72,22 +73,20 @@ nextColour colour = case colour of
   --    In the expression: LineTool
   --    In an equation for `nextTool':
 nextTool :: Tool -> Tool
-nextTool = undefined
-
---tool = case tool of
---  (PolygonTool [])                -> CircleTool
---  (LineTool Nothing)              -> PolygonTool
---  (CircleTool Nothing)            -> TriangleTool
---  (TriangleTool Nothing)          -> RectangleTool
---  (RectangleTool Nothing Nothing) -> CapTool
---  (CapTool Nothing Nothing)       -> LineTool
---  tool                            -> tool   
-
+nextTool tool = case tool of
+ (PolygonTool [])                -> (CircleTool Nothing)
+ (LineTool Nothing)              -> (PolygonTool [])
+ (CircleTool Nothing)            -> (TriangleTool Nothing)
+ (TriangleTool Nothing)          -> (RectangleTool undefined Nothing)
+ (RectangleTool _ Nothing)       -> (CapTool Nothing Nothing)
+ (CapTool Nothing Nothing)       -> (LineTool Nothing)
+ tool                            -> tool  
 --tool 
---  |tool == (PolygonTool [])                = CircleTool
---  |tool == (LineTool Nothing)              = PolygonTool
---  |tool == (CircleTool Nothing)            = TriangleTool
---  |tool == (TriangleTool Nothing)          = RectangleTool
---  |tool == (RectangleTool Nothing Nothing) = CapTool
---  |tool == (CapTool Nothing Nothing)       = LineTool
---  |otherwise                               = tool
+  -- |tool == (PolygonTool [])                = CircleTool Nothing
+  -- |tool == (LineTool Nothing)              = PolygonTool []
+  -- |tool == (CircleTool Nothing)            = TriangleTool Nothing
+  -- |tool == (TriangleTool Nothing)          = RectangleTool Nothing Nothing
+  -- |tool == (RectangleTool Nothing Nothing) = CapTool Nothing Nothing
+  -- |tool == (CapTool Nothing Nothing)       = LineTool
+  -- |otherwise                               = tool
+
