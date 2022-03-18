@@ -77,7 +77,7 @@ nextTool tool = case tool of
  (PolygonTool [])                -> (CircleTool Nothing)
  (LineTool Nothing)              -> (PolygonTool [])
  (CircleTool Nothing)            -> (TriangleTool Nothing)
- (TriangleTool Nothing)          -> (RectangleTool undefined Nothing)
+ (TriangleTool Nothing)          -> (RectangleTool 1 Nothing)
  (RectangleTool _ Nothing)       -> (CapTool Nothing Nothing)
  (CapTool Nothing Nothing)       -> (LineTool Nothing)
  tool                            -> tool  
