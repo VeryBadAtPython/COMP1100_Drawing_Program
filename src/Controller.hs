@@ -4,7 +4,6 @@ module Controller where
 
 import CodeWorld
 import Model
-import View
 
 import Data.Text (pack, unpack)
 
