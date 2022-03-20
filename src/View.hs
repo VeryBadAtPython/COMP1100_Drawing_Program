@@ -42,10 +42,25 @@ colourShapesToPicture = undefined
 colourShapeToPicture :: ColourShape -> Picture
 colourShapeToPicture = undefined
 
--- TODO
+-- Task 2A
 colourNameToColour :: ColourName -> Colour
-colourNameToColour = undefined
+colourNameToColour name = case name of
+ Black  -> black
+ Red    -> red
+ Orange -> orange
+ Yellow -> yellow
+ Green  -> green
+ Blue   -> blue
+ Purple -> purple
+ White  -> white
 
--- TODO
+-- Task 2B
 shapeToPicture :: Shape -> Picture
 shapeToPicture = undefined
+{- shape = case shape of
+  Line x y                 -> polyline [x,y]
+  Polygon [x]              -> solidPolygon [x]
+  Circle (x1,y1) (x2,y2)   -> translated x1 y1 (circle undefined)
+  Triangle (x1,y1) (x2,y2) -> undefined 
+  Rectangle k x y          -> undefined
+  Cap x y k                -> undefined -}
