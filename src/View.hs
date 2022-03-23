@@ -34,13 +34,24 @@ toolToLabel tool = case tool of
   RectangleTool _ _     -> "Rectangle: +/- to increase/decrease scaling factor; click-drag release for first 2 corners"
   CapTool _ _           -> "Cap: click-drag-release for circle, then click for cap level"
 
--- TODO
+-- TASK 3C
 colourShapesToPicture :: [ColourShape] -> Picture
-colourShapesToPicture = undefined
+colourShapesToPicture list = case list of
+    [x]  -> colourShapeToPicture x
+    x:xs -> (colourShapeToPicture x) & (colourShapesToPicture xs)
+    _    -> error "No matching case for given list of colourshapes"
 
--- TODO
+-- TASK 2C
 colourShapeToPicture :: ColourShape -> Picture
-colourShapeToPicture = undefined
+colourShapeToPicture colourshape = case colourshape of
+ (shape,Black)   -> coloured black (shapeToPicture shape)
+ (shape,Red)     -> coloured red (shapeToPicture shape)
+ (shape,Orange)  -> coloured orange (shapeToPicture shape)
+ (shape,Yellow)  -> coloured yellow (shapeToPicture shape)
+ (shape,Green)   -> coloured green (shapeToPicture shape)
+ (shape,Blue)    -> coloured blue (shapeToPicture shape)
+ (shape,Purple)  -> coloured purple (shapeToPicture shape)
+ (shape,White)   -> coloured white (shapeToPicture shape)
 
 -- Task 2A
 colourNameToColour :: ColourName -> Colour
