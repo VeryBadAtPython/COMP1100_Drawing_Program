@@ -55,8 +55,21 @@ colourNameToColour name = case name of
  White  -> white
 
 -- Task 2B
+distance :: Point -> Point -> Double
+distance (x1,y1) (x2,y2) = sqrt(((x2-x1)**2)+((y2-y1)**2))
+
+otherTriPoint :: Point -> Point -> Point
+otherTriPoint (x1,y1) (x2,_) = (2*x2-x1,y1)
+
 shapeToPicture :: Shape -> Picture
-shapeToPicture = undefined
+shapeToPicture shape = case shape of
+  Line point1 point2            -> polyline [point1,point2]
+  Polygon pointlist             -> solidPolygon pointlist
+  Circle (a,b) circum           -> translated a b (solidCircle (distance (a,b) circum))
+  Triangle point1 point2        -> solidPolygon [point1, point2, (otherTriPoint point1 point2)]
+  Rectangle k (x1,y1) (x2,y2)   -> solidPolygon [(x1,y1), (x2,y2), (x2+k*(y2-y1),y2+k*(x1-x2)), (x1+k*(y2-y1),y1+k*(x1-x2))]
+  Cap point1 point2 factor      -> undefined
+
 {- shape = case shape of
   Line x y                 -> polyline [x,y]
   Polygon [x]              -> solidPolygon [x]
