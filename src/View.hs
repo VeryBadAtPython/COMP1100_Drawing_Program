@@ -24,7 +24,12 @@ modelToPicture (Model ss t c)
       _ -> "")
     stringToText = lettering . pack
 
--- Task 1B
+
+
+
+
+
+-- Task 1A
 toolToLabel :: Tool -> String
 toolToLabel tool = case tool of
   LineTool _            -> "Line: click-drag-release"
@@ -34,24 +39,9 @@ toolToLabel tool = case tool of
   RectangleTool _ _     -> "Rectangle: +/- to increase/decrease scaling factor; click-drag release for first 2 corners"
   CapTool _ _           -> "Cap: click-drag-release for circle, then click for cap level"
 
--- TASK 3C
-colourShapesToPicture :: [ColourShape] -> Picture
-colourShapesToPicture list = case list of
-    [x]  -> colourShapeToPicture x
-    x:xs -> (colourShapeToPicture x) & (colourShapesToPicture xs)
-    _    -> error "No matching case for given list of colourshapes"
 
--- TASK 2C
-colourShapeToPicture :: ColourShape -> Picture
-colourShapeToPicture colourshape = case colourshape of
- (shape,Black)   -> coloured black (shapeToPicture shape)
- (shape,Red)     -> coloured red (shapeToPicture shape)
- (shape,Orange)  -> coloured orange (shapeToPicture shape)
- (shape,Yellow)  -> coloured yellow (shapeToPicture shape)
- (shape,Green)   -> coloured green (shapeToPicture shape)
- (shape,Blue)    -> coloured blue (shapeToPicture shape)
- (shape,Purple)  -> coloured purple (shapeToPicture shape)
- (shape,White)   -> coloured white (shapeToPicture shape)
+
+
 
 -- Task 2A
 colourNameToColour :: ColourName -> Colour
@@ -64,6 +54,8 @@ colourNameToColour name = case name of
  Blue   -> blue
  Purple -> purple
  White  -> white
+
+
 
 -- Task 2B
 distance :: Point -> Point -> Double
@@ -81,10 +73,25 @@ shapeToPicture shape = case shape of
   Rectangle k (x1,y1) (x2,y2)   -> solidPolygon [(x1,y1), (x2,y2), (x2+k*(y2-y1),y2+k*(x1-x2)), (x1+k*(y2-y1),y1+k*(x1-x2))]
   Cap point1 point2 factor      -> undefined
 
-{- shape = case shape of
-  Line x y                 -> polyline [x,y]
-  Polygon [x]              -> solidPolygon [x]
-  Circle (x1,y1) (x2,y2)   -> translated x1 y1 (circle undefined)
-  Triangle (x1,y1) (x2,y2) -> undefined 
-  Rectangle k x y          -> undefined
-  Cap x y k                -> undefined -}
+
+
+-- TASK 2C
+colourShapeToPicture :: ColourShape -> Picture
+colourShapeToPicture colourshape = case colourshape of
+ (shape,Black)   -> coloured black (shapeToPicture shape)
+ (shape,Red)     -> coloured red (shapeToPicture shape)
+ (shape,Orange)  -> coloured orange (shapeToPicture shape)
+ (shape,Yellow)  -> coloured yellow (shapeToPicture shape)
+ (shape,Green)   -> coloured green (shapeToPicture shape)
+ (shape,Blue)    -> coloured blue (shapeToPicture shape)
+ (shape,Purple)  -> coloured purple (shapeToPicture shape)
+ (shape,White)   -> coloured white (shapeToPicture shape)
+
+
+
+-- TASK 2D
+colourShapesToPicture :: [ColourShape] -> Picture
+colourShapesToPicture list = case list of
+    [x]  -> colourShapeToPicture x
+    x:xs -> (colourShapeToPicture x) & (colourShapesToPicture xs)
+    _    -> error "No matching case for given list of colourshapes"
