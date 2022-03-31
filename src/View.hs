@@ -71,7 +71,7 @@ shapeToPicture shape = case shape of
   Circle (x1,y1) (x2,y2)        -> translated x1 y1 (solidCircle (distance (x1,y1) (x2,y2)))
   Triangle point1 point2        -> solidPolygon [point1, point2, (otherTriPoint point1 point2)]
   Rectangle k (x1,y1) (x2,y2)   -> solidPolygon [(x1,y1), (x2,y2), (x2+k*(y2-y1),y2+k*(x1-x2)), (x1+k*(y2-y1),y1+k*(x1-x2))]
-  Cap (x1,y1) (x2,y2) ycoord    -> translated (x1-dist) (y1-dist) (clipped (2*dist) (ycoord - y1 - dist) (translated dist dist (solidCircle dist)))
+  Cap (x1,y1) (x2,y2) ycoord    -> translated (x1-dist) (y1-dist) (clipped (2*dist) (ycoord - y1 - dist) (translated x1 y1 (solidCircle dist)))
     where
       dist = distance (x1,y1) (x2,y2)
 

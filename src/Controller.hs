@@ -7,35 +7,37 @@ import Model
 
 import Data.Text (pack, unpack)
 
--- | Compute the new Model in response to an Event.
+-- | TASK 3 Compute the new Model in response to an Event.
 handleEvent :: Event -> Model -> Model
 handleEvent event (Model shapes tool colour) =
   case event of
     KeyPress key
-      -- revert to an empty canvas
-      | k == "Esc" -> startModel
+      | k == "Esc" -> startModel -- revert to an empty canvas
+      | k == "D" -> trace (pack (show currentModel)) currentModel -- write the current model to the console
+      | k == "S" -> Model sample tool colour -- display the mystery image
 
-      -- write the current model to the console
-      | k == "D" -> trace (pack (show currentModel)) currentModel
+      | k == "Backspace" || k == "Delete" -> case shapes of
+        []    -> currentModel         -- Prevents crash on empty shapes list
+        [_]   -> Model [] tool colour -- Deletes only element
+        _:xs  -> Model xs tool colour -- Deletes last added element
 
-      -- display the mystery image
-      | k == "S" -> Model sample tool colour
-
-      | k == "Backspace" || k == "Delete" -> undefined  -- TODO
-
-      | k == " " -> undefined  -- TODO
+      | k == " " -> case tool of
+        PolygonTool list -> Model (((Polygon list) , colour):shapes) (PolygonTool []) colour -- Adds polygontool to the list of shapes when spacebar
+        _                     -> currentModel
    
-      | k == "T" -> undefined  -- TODO
+      | k == "T" -> Model shapes (nextTool tool) colour
+      | k == "C" -> Model shapes tool (nextColour colour)
 
-      | k == "C" -> undefined  -- TODO
-
-      | k == "+" || k == "=" -> undefined  -- TODO
-
-      | k == "-" || k == "_" -> undefined  -- TODO
+      | k == "+" || k == "=" -> case tool of
+        RectangleTool x (Just point) -> Model shapes (RectangleTool (x+0.1) (Just point)) colour -- Increments rect scale +0.1
+        _                            -> currentModel
+      | k == "-" || k == "_" -> case tool of
+        RectangleTool x (Just point) -> Model shapes (RectangleTool (x-0.1) (Just point)) colour -- Inc rect scale factor -0.1
+        _                            -> currentModel
 
       -- ignore other keys
       | otherwise -> currentModel
-      
+
       where
         k = unpack key
 
@@ -48,6 +50,10 @@ handleEvent event (Model shapes tool colour) =
 
     where
      currentModel = Model shapes tool colour
+
+
+
+
 
 -- Task 1B
 nextColour :: ColourName -> ColourName
@@ -64,13 +70,6 @@ nextColour colour = case colour of
 -- Task 1C
   -- If holding nothing select next tool in following sequence otherwise return argument unchanged
   -- Line -> Polygon -> Circle -> Triangle -> Rectangle-> Cap -> Line
--- (ERROR Recieved) 
-  -- src\Controller.hs:74:44: error:
-  --  * Couldn't match expected type `Tool'
-  --                with actual type `Maybe Point -> Tool'
-  --  * Probable cause: `LineTool' is applied to too few arguments
-  --    In the expression: LineTool
-  --    In an equation for `nextTool':
 nextTool :: Tool -> Tool
 nextTool tool = case tool of
  (PolygonTool [])                -> (CircleTool Nothing)
@@ -79,13 +78,5 @@ nextTool tool = case tool of
  (TriangleTool Nothing)          -> (RectangleTool 1 Nothing)
  (RectangleTool _ Nothing)       -> (CapTool Nothing Nothing)
  (CapTool Nothing Nothing)       -> (LineTool Nothing)
- tool                            -> tool  
---tool 
-  -- |tool == (PolygonTool [])                = CircleTool Nothing
-  -- |tool == (LineTool Nothing)              = PolygonTool []
-  -- |tool == (CircleTool Nothing)            = TriangleTool Nothing
-  -- |tool == (TriangleTool Nothing)          = RectangleTool Nothing Nothing
-  -- |tool == (RectangleTool Nothing Nothing) = CapTool Nothing Nothing
-  -- |tool == (CapTool Nothing Nothing)       = LineTool
-  -- |otherwise                               = tool
+ _                               -> tool  
 
