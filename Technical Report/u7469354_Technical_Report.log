@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.15)  30 MAR 2022 21:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.15)  31 MAR 2022 13:04
 entering extended mode
 **"c:/assignment1/Technical Report/u7469354_Technical_Report.tex"
 (c:/assignment1/Technical Report/u7469354_Technical_Report.tex
@@ -267,15 +267,15 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(54.2025pt, 505.89pt, 54.2025pt)
-* v-part:(T,H,B)=(54.2025pt, 686.56499pt, 54.2025pt)
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=505.89pt
-* \textheight=672.11122pt
-* \oddsidemargin=-18.06749pt
-* \evensidemargin=-18.06749pt
-* \topmargin=-55.06749pt
+* \textwidth=500.484pt
+* \textheight=666.93262pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -302,19 +302,19 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Jacob Bos/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (u7469354_Technical_Report.aux) ) 
+{C:/Users/Jacob Bos/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] (u7469354_Technical_Report.aux) ) 
 Here is how much of TeX's memory you used:
  3629 strings out of 478907
  50227 string characters out of 2849959
- 360798 words of memory out of 3000000
+ 363791 words of memory out of 3000000
  21477 multiletter control sequences out of 15000+600000
  409755 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,66p,518b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,6n,66p,1233b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on u7469354_Technical_Report.pdf (1 page, 82011 bytes).
+Output written on u7469354_Technical_Report.pdf (2 pages, 88853 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
+ 39 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

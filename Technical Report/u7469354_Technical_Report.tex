@@ -21,8 +21,8 @@
   {\end{smallmatrix}\right)}
 
 
-\usepackage[margin=0.75in]{geometry}
-\addtolength{\textheight}{-0.2in}
+\usepackage[margin=2cm]{geometry}
+\addtolength{\textheight}{-0.5cm}
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \begin{document}
@@ -33,19 +33,23 @@ This Technical report documents the structure of the assignment solution and off
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\section{Documentation}%Explanation of code workings, functions and structure.
-\paragraph{Part 1}
-\paragraph{Part 2}
+\section*{Documentation}%Explanation of code workings, functions and structure.
+\paragraph{Part 1} consists of three functions. The first function of Part 1 \verb|toolToLabel| in \verb|model View| case matches an input of a tool, ignoring the other tool properties to return a string output of instructions to the user on tool use. The second function \verb|nextColor| in \verb|module Controller| uses case matching to cycle through colours according to the following order
+
+\begin{verbatim} Black  -> Red -> Orange -> Yellow -> Green -> Blue -> Purple -> White -> Black\end{verbatim}
+
+Finally, the functon \verb|nextTool| in \verb|module Controller| cycles a particular imput of an empty tool to the next tool in the sequence also with empty parameters. It also uses case matching.
+\paragraph{Part 2} Contains four functions the first of which, \verb|colourNameToColour| in \verb|module View| which case matches elements of the type \verb|ColourName| and returns the same colour in the type of \verb|Colour| which codeworld can interpret. The second function \verb|shapeToPicture| takes the information kept within the type \verb|Shape| and converts it to a codeworld \verb|Picture| that can be printed to the display. Where most inputs were case matched to equivilent the specifications of \verb|Rectangle| were through some vector algebra converted to a \verb|solidPolygon| of four points. The \verb|Cap| is a combination of the codeworld \verb|clipped| and \verb|circle| functions transposed as the user specifies. The third function \verb|colourShapeToPicture| takes input of the type \verb|colourShape| and returns the associated shape with the given colour in the type \verb|Picture|. Finally, the function \verb|colourShapesToPicture| recursivly runs through an input of type \verb|[Shape]| and returns each member composed together as a composite \verb|Picture|. It returns an error message for unexpected inputs.
 \paragraph{Part 3}
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\section{Reflection}%Analysis of design choices and assumptions
+\section*{Reflection}%Analysis of design choices and assumptions
 
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\section{Testing}%How did I test the program focus on methodology and testing groups
+\section*{Testing}%How did I test the program focus on methodology and testing groups
 \paragraph{Part 1}
 Part 1 composed of the functions \verb|toolToLabel| \verb|nextTool| and \verb|nextColour| was tested using the provided cabal test run under the command \verb|cabal v2-test|. It passed \verb| 1 of 1 test suites|. Further simple tests were condcuted within development based on calling function inputs in the terminal to ensure the case matching was working in correspondence to the intended inputs.
 \paragraph{Part 2}
