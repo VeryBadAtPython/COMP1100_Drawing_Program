@@ -72,9 +72,8 @@ shapeToPicture shape = case shape of
   Triangle point1 point2        -> solidPolygon [point1, point2, (otherTriPoint point1 point2)]
   Rectangle k (x1,y1) (x2,y2)   -> solidPolygon [(x1,y1), (x2,y2), (x2+k*(y2-y1),y2+k*(x1-x2)), (x1+k*(y2-y1),y1+k*(x1-x2))]
   Cap (x1,y1) (x2,y2) ycoord    -> translated (x1-dist) (y1-dist) (clipped (2*dist) (ycoord - y1 - dist) (translated x1 y1 (solidCircle dist)))
-    where
-      dist = distance (x1,y1) (x2,y2)
-
+    where dist = distance (x1,y1) (x2,y2)
+ 
 
 
 -- TASK 2C
@@ -94,6 +93,7 @@ colourShapeToPicture colourshape = case colourshape of
 -- TASK 2D
 colourShapesToPicture :: [ColourShape] -> Picture
 colourShapesToPicture list = case list of
+    []   -> colourShapeToPicture (Polygon [],Red)
     [x]  -> colourShapeToPicture x
     x:xs -> (colourShapeToPicture x) & (colourShapesToPicture xs)
-    _    -> error "No matching case for given list of colourshapes"
+    --_  -> error "No matching case for given list of colourshapes"
