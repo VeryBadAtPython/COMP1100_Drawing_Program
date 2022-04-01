@@ -43,23 +43,17 @@ deletePress (Model shapes tool colour) = case shapes of
 endPoly :: Model -> Model
 endPoly (Model shapes tool colour) = case tool of
   PolygonTool list -> Model (((Polygon list) , colour):shapes) (PolygonTool []) colour -- Adds polygontool to the list of shapes when spacebar
-  _                -> currentModel
-  where
-     currentModel = Model shapes tool colour
+  _                -> (Model shapes tool colour)
 
 scaleRect :: Model -> Model
 scaleRect (Model shapes tool colour) = case tool of
   RectangleTool x Nothing -> Model shapes (RectangleTool (x+0.1) Nothing) colour -- Increments rect scale +0.1
-  _                            -> currentModel
-  where
-     currentModel = Model shapes tool colour
+  _                       -> (Model shapes tool colour)
 
 negScaleRect :: Model -> Model
 negScaleRect (Model shapes tool colour) = case tool of
   RectangleTool x Nothing -> Model shapes (RectangleTool (x-0.1) Nothing) colour -- Inc rect scale factor -0.1
-  _                            -> currentModel
-  where
-     currentModel = Model shapes tool colour
+  _                       -> (Model shapes tool colour)
 
 pointPress :: Model -> Point -> Model
 pointPress (Model shapes tool colour) (x,y) = case tool of
