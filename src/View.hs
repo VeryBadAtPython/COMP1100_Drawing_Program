@@ -93,7 +93,7 @@ colourShapeToPicture colourshape = case colourshape of
 -- TASK 2D
 colourShapesToPicture :: [ColourShape] -> Picture
 colourShapesToPicture list = case list of
-    []   -> colourShapeToPicture (Polygon [],Red)
+    []   -> blank
     [x]  -> colourShapeToPicture x
     x:xs -> (colourShapeToPicture x) & (colourShapesToPicture xs)
     --_  -> error "No matching case for given list of colourshapes"
