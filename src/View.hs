@@ -27,8 +27,6 @@ modelToPicture (Model ss t c)
 
 
 
-
-
 -- Task 1A
 toolToLabel :: Tool -> String
 toolToLabel tool = case tool of
@@ -71,9 +69,20 @@ shapeToPicture shape = case shape of
   Circle (x1,y1) (x2,y2)        -> translated x1 y1 (solidCircle (distance (x1,y1) (x2,y2)))
   Triangle point1 point2        -> solidPolygon [point1, point2, (otherTriPoint point1 point2)]
   Rectangle k (x1,y1) (x2,y2)   -> solidPolygon [(x1,y1), (x2,y2), (x2+k*(y2-y1),y2+k*(x1-x2)), (x1+k*(y2-y1),y1+k*(x1-x2))]
-  Cap (x1,y1) (x2,y2) ycoord    -> translated (x1-dist) (y1-dist) (clipped (2*dist) (ycoord - y1 - dist) (translated dist dist (solidCircle dist)))
+  Cap (x1,y1) (x2,y2) ycoord    -> case (ycoord > (y1-dist)) of
+    True -> translated x1 (ycoord+dist) (clipped (2*dist) (2*dist) (translated 0 (y1-ycoord-dist) (solidCircle dist)))
+    _    -> translated x1 y1 (solidCircle dist)
     where dist = distance (x1,y1) (x2,y2)
- 
+
+
+
+{-
+capMaker :: Shape -> Picture
+capMaker (Cap (x1,y1) (x2,y2) ycoord) = case (ycoord > (y1-dist)) of
+  True -> translated x1 (ycoord+dist) (clipped (2*dist) (2*dist) (translated 0 (y1-ycoord-dist) (solidCircle dist)))
+  _    -> translated x1 y1 (solidCircle dist)
+  where dist = distance (x1,y1) (x2,y2)
+-}
 
 
 -- TASK 2C
@@ -96,4 +105,3 @@ colourShapesToPicture list = case list of
     []   -> blank
     [x]  -> colourShapeToPicture x
     x:xs -> (colourShapeToPicture x) & (colourShapesToPicture xs)
-    --_  -> error "No matching case for given list of colourshapes"
