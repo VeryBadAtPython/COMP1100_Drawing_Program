@@ -27,6 +27,8 @@ modelToPicture (Model ss t c)
 
 
 
+
+
 -- Task 1A
 toolToLabel :: Tool -> String
 toolToLabel tool = case tool of

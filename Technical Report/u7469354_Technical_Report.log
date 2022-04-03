@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.15)  31 MAR 2022 13:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.15)  3 APR 2022 18:19
 entering extended mode
 **"c:/assignment1/Technical Report/u7469354_Technical_Report.tex"
 (c:/assignment1/Technical Report/u7469354_Technical_Report.tex
@@ -185,6 +185,8 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \mult@nat@firstbox=\box100
 \colbreak@box=\box101
 \mc@col@check@num=\count278
+) (C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 ) (C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
  (C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -300,21 +302,30 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
  (C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) (u7469354_Technical_Report.toc)
+\tf@toc=\write3
+\openout3 = `u7469354_Technical_Report.toc'.
 
-{C:/Users/Jacob Bos/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] (u7469354_Technical_Report.aux) ) 
+ [1
+
+{C:/Users/Jacob Bos/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [1]
+Overfull \hbox (17.82178pt too wide) in paragraph at lines 58--59
+ \OT1/cmr/bx/n/10.95 Part 2[] \OT1/cmr/m/n/10.95 Whilst [][]\OT1/cmtt/m/n/10.95 colourNameToColour []\OT1/cmr/m/n/10.95 was a very sim-ple case match-ing func-tion the func-tion [][]\OT1/cmtt/m/n/10.95 shapeToPicture
+ []
+
+[2] [3] (u7469354_Technical_Report.aux) ) 
 Here is how much of TeX's memory you used:
- 3629 strings out of 478907
- 50227 string characters out of 2849959
- 363791 words of memory out of 3000000
- 21477 multiletter control sequences out of 15000+600000
- 409755 words of font info for 51 fonts, out of 8000000 for 9000
+ 3680 strings out of 478907
+ 51256 string characters out of 2849959
+ 365070 words of memory out of 3000000
+ 21521 multiletter control sequences out of 15000+600000
+ 411310 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,66p,1233b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,6n,66p,1424b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on u7469354_Technical_Report.pdf (2 pages, 88853 bytes).
+Output written on u7469354_Technical_Report.pdf (4 pages, 101010 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
