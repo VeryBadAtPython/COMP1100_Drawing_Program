@@ -26,9 +26,6 @@ modelToPicture (Model ss t c)
 
 
 
-
-
-
 -- Task 1A
 toolToLabel :: Tool -> String
 toolToLabel tool = case tool of
@@ -89,15 +86,18 @@ capMaker (Cap (x1,y1) (x2,y2) ycoord) = case (ycoord > (y1-dist)) of
 
 -- TASK 2C
 colourShapeToPicture :: ColourShape -> Picture
-colourShapeToPicture colourshape = case colourshape of
- (shape,Black)   -> coloured black (shapeToPicture shape)
+colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shapeToPicture shape)
+
+--redundant code, didn't use colourNameToColour initially
+{-colourShapeToPicture (colourshape) = case colourshape of
+  (shape,Black)   -> coloured black (shapeToPicture shape)
  (shape,Red)     -> coloured red (shapeToPicture shape)
  (shape,Orange)  -> coloured orange (shapeToPicture shape)
  (shape,Yellow)  -> coloured yellow (shapeToPicture shape)
  (shape,Green)   -> coloured green (shapeToPicture shape)
  (shape,Blue)    -> coloured blue (shapeToPicture shape)
  (shape,Purple)  -> coloured purple (shapeToPicture shape)
- (shape,White)   -> coloured white (shapeToPicture shape)
+ (shape,White)   -> coloured white (shapeToPicture shape)-}
 
 
 

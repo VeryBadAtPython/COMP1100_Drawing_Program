@@ -32,7 +32,7 @@ handleEvent event (Model shapes tool colour) =
     where
      currentModel = Model shapes tool colour
 
- -- HELPER FUNCTIONS for Part 3
+ -- HELPER FUNCTIONS for Parts 3A and 3B
 
 deletePress  :: Model -> Model
 deletePress (Model shapes tool colour) = case shapes of
