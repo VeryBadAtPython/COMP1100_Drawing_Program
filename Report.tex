@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+\title{Technical Report\\ COMP1100 Assignment 1}
+\author{Jacob Bos\\ ANU u7469354}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+	\newcolumntype{L}{>{\centering\arraybackslash}m{15cm}}
+\usepackage{float}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+\newenvironment{smallpmatrix}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+ \newenvironment{smol}
+  {\left(\begin{smallmatrix}}
+  {\end{smallmatrix}\right)}
+
+
+\usepackage[margin=2cm]{geometry}
+\addtolength{\textheight}{-0.5cm}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\setstretch{1.5}
+\begin{center}
+  Lab: Tuesday 11am\\
+  Tutor: Abhaas Goyal
+\end{center}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Introduction} 
+This Technical report documents the structure of the assignment solution and offers a reflective analysis of design choices made and the results and structure of the testing regime. The program is designed to take user inputs and produce a picture onscreen using the Haskell CodeWorld package. %The Documentation section will purely describe the design of the solution. The analysis section will assess the design choices made and the specifications and assumptions that led to them. Finally the Testing section documents the testing regiment used for evaluation. 
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Design Documentation}%Explanation of code workings, functions and structure.
+
+\paragraph{Part 1} consists of three functions. The first, \verb|toolToLabel| in \verb|model View| case matches an input of a tool, ignoring all other properties to return a string output of instructions to the user on tool use. The second function \verb|nextColor| in \verb|module Controller| uses case matching to cycle through colours according to the specified order. Finally, the function \verb|nextTool| in \verb|module Controller| cycles a particular input of an empty tool to the next tool in the sequence also with empty parameters. It also uses case matching.
+
+\paragraph{Part 2} Contains four functions the first of which, \verb|colourNameToColour| in \verb|module View|  case matches elements of  type \verb|ColourName| and returns the same information in the typef \verb|Colour| which codeworld uses. The second function \verb|shapeToPicture| takes the information kept within  type \verb|Shape| and converts it to a codeworld \verb|Picture| that can be printed to the display. Where most inputs were case matched to equivalent the specifications of \verb|Rectangle| were through some linear algebra converted to a \verb|solidPolygon| of four points. The \verb|Cap| is a combination of the codeworld \verb|clipped| and \verb|circle| functions transposed as the user specifies. The third function \verb|colourShapeToPicture| takes input of the type \verb|colourShape| and returns the coloured shape in type \verb|Picture|. The helper functions \verb|distance| and \verb|otherTriPoint| assisted implementation, the former calculating circle radii and the latter the third point of the isosceles triangle. Finally, the function \verb|colourShapesToPicture| recursively runs through an input of type \verb|[ColourShape]| and returns each member as a composite \verb|Picture|.
+
+\paragraph{Part 3} consists of one key function and six helper functions. The main function \verb|handleEvent| cases on either keystroke inputs or mouse key inputs to produce the intended picture output. Presses of backspace and delete calls the function \verb|deletePress| which removes the head of the list of shapes to remove the most recently added shape from the image. The spacebar input calls the function \verb|endPoly| that takes any list stored in type \verb|Tool| and then adds a codeworld polygon to the list of colourshapes. Key inputs of + or - call the functions \verb|scaleRect| and \verb|negScaleRect| respectively that add or decrease the scaling factor stored in a rectangle tool. Mouse presses call the function \verb|pointPress| that cases on the type of shape tool being used to store the pressed point in the desired tool. Further the helper \verb|pointRel| is called upon mouse releases generally to complete a shape adding it to the list of shapes and returning an empty tool. There are two cases on \verb|CapTool| to determine if it is storing the second point or the y coordinate of the cutoff point.
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Reflection}
+\paragraph{Part 1} used a case statement for all three functions as they were all nessisarially injective with a finite domain. Consequent to this there was no need to test the truth of any statements. \verb|nextTool| used a wildcard on the final cast to catch any half completed shapes and avoid the program crashing and instead just returning the held tool.
+\paragraph{Part 2} Whilst \verb|colourNameToColour| was a very simple case matching function the function\\ \verb|shapeToPicture| is more complicated. It case matches on the tool used. For both the triangle and rectangle inputs the \verb|solidPolygon| function was used to create the associated picture due to the specifications of the input not aligning well to a unique CodeWorld  function. For the triangle the points used were the two given points and a third given by the function \verb|otherTriPoint| that calculated the other isosceles point. For rectangles some vector maths is used in teh definition to define the two other points as a translation of the first two points of a degree dictated by the scaling factor. The specifications for producing a cap required another nested case to determine if the cutoff was below the circle or not. if it was it would just return a circle, otherwise the desired cap would be produced. This was necessitated by the particular clip window and translations used. \verb|colourShapeToPicture| used a simple casing on the possible pairs of colourshapes to return the appropiiate coloured picture using the appropriate CodeWorld function. Finally it was necessary to recurse through the list of colourshapes in the \verb|colourShapesToPicture| function as the list could be of any length.
+\paragraph{Part 3} was a simple implementation. The main function \verb|handleEvent| cased on different inputs and would, instead of nesting cases, call appropriate helper function(s) which could case on the required part of the input to produce the desired output .  All six helper functions were guarded by a wildcard at the end to reduce the risk of errors.
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Assumptions}%Describe assumptions you have made about how a user might use the program and how this has influenced your design decisions.
+Due to a gap in the specifications for \verb|handleEvent| it was assumed that the function \verb|pointRel| should re-initialise the scale factor of the rectangle tool at \verb|1.0| upon the completion of a rectangle on release of cursor. This is hoped to enhance functionality when a user has used an extreme value of the scale factor and wants to quickly return to a reasonable scale factor for the next rectangle input. For \verb|colourShapesToPicture| it was assumed that in case of an empty shapes list it should return a blank canvas, thus the prespecified CodeWorld function \verb|blank| was used.
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Testing}%How did I test the program focus on methodology and testing groups
+\paragraph{Part 1}
+Part 1 composed of the functions \verb|toolToLabel| \verb|nextTool| and \verb|nextColour| was tested using the provided cabal test run under the command \verb|cabal v2-test|. It passed \verb| 1 of 1 test suites|. Further simple tests were condcuted within development based on calling function inputs in the terminal to ensure the case matching was working in correspondence to the intended inputs. 
+\paragraph{Part 2} 
+
+\paragraph{Part 3}
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\end{document}

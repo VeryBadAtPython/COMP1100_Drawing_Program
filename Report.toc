@@ -6,7 +6,8 @@
 \contentsline {section}{\numberline {3}Reflection}{2}{}%
 \contentsline {paragraph}{Part 1}{2}{}%
 \contentsline {paragraph}{Part 2}{2}{}%
-\contentsline {subsection}{\numberline {3.1}Assumptions}{3}{}%
+\contentsline {paragraph}{Part 3}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Assumptions}{2}{}%
 \contentsline {section}{\numberline {4}Testing}{3}{}%
 \contentsline {paragraph}{Part 1}{3}{}%
 \contentsline {paragraph}{Part 2}{3}{}%
