@@ -41,6 +41,14 @@ toolToLabel tool = case tool of
 
 
 -- Task 2A
+
+-- / colour name to the colour
+-- >>> colourNameToColour Black
+-- black
+--
+-- >>> colourNameToColour Blue
+-- blue
+
 colourNameToColour :: ColourName -> Colour
 colourNameToColour name = case name of
  Black  -> black
@@ -55,11 +63,30 @@ colourNameToColour name = case name of
 
 
 -- Task 2B
+
+-- / Distance test
+--
+-- >>> distance (1,1) (1,2)
+-- 1
+
 distance :: Point -> Point -> Double
 distance (x1,y1) (x2,y2) = sqrt(((x2-x1)**2)+((y2-y1)**2))
 
+-- / Other triangle point test
+--
+-- >>> otherTriPoint (1,1) (2,2)
+-- (3.0,1.0)
+
 otherTriPoint :: Point -> Point -> Point
 otherTriPoint (x1,y1) (x2,_) = (2*x2-x1,y1)
+
+-- /Shape to pic test
+--
+-- >>> shapeToPicture Line (1,1) (1,2)
+-- polyline [(1,1),(1,2)]
+--
+-- >>> shapeToPicture Circle (1,1) (1,2)
+-- translated 1 1 (solidCircle 2)
 
 shapeToPicture :: Shape -> Picture
 shapeToPicture shape = case shape of
@@ -75,16 +102,14 @@ shapeToPicture shape = case shape of
 
 
 
-{-
-capMaker :: Shape -> Picture
-capMaker (Cap (x1,y1) (x2,y2) ycoord) = case (ycoord > (y1-dist)) of
-  True -> translated x1 (ycoord+dist) (clipped (2*dist) (2*dist) (translated 0 (y1-ycoord-dist) (solidCircle dist)))
-  _    -> translated x1 y1 (solidCircle dist)
-  where dist = distance (x1,y1) (x2,y2)
--}
-
-
 -- TASK 2C
+
+-- / Test of colourshape to picture
+--
+-- >>> colourShapeToPicture ((Line (1,1) (1,2)), Black)
+-- coloured black (polyline [(1,1),(1,2)])
+
+
 colourShapeToPicture :: ColourShape -> Picture
 colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shapeToPicture shape)
 
@@ -102,6 +127,16 @@ colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shap
 
 
 -- TASK 2D
+
+-- / Test of colourshapes to picture
+--
+-- >>> colourShapesToPicture [((Line (1,1) (1,2)), Black)]
+-- [coloured black (polyline [(1,1),(1,2)])]
+--
+-- >>> colourShapesToPicture []
+-- >>> blank
+
+
 colourShapesToPicture :: [ColourShape] -> Picture
 colourShapesToPicture list = case list of
     []   -> blank
