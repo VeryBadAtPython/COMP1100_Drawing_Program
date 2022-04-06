@@ -37,9 +37,6 @@ toolToLabel tool = case tool of
   CapTool _ _           -> "Cap: click-drag-release for circle, then click for cap level"
 
 
-
-
-
 -- Task 2A
 
 -- / colour name to the colour
@@ -113,9 +110,10 @@ shapeToPicture shape = case shape of
 colourShapeToPicture :: ColourShape -> Picture
 colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shapeToPicture shape)
 
+
 --redundant code, didn't use colourNameToColour initially
 {-colourShapeToPicture (colourshape) = case colourshape of
-  (shape,Black)   -> coloured black (shapeToPicture shape)
+ (shape,Black)   -> coloured black (shapeToPicture shape)
  (shape,Red)     -> coloured red (shapeToPicture shape)
  (shape,Orange)  -> coloured orange (shapeToPicture shape)
  (shape,Yellow)  -> coloured yellow (shapeToPicture shape)
@@ -123,7 +121,6 @@ colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shap
  (shape,Blue)    -> coloured blue (shapeToPicture shape)
  (shape,Purple)  -> coloured purple (shapeToPicture shape)
  (shape,White)   -> coloured white (shapeToPicture shape)-}
-
 
 
 -- TASK 2D
@@ -134,8 +131,7 @@ colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shap
 -- [coloured black (polyline [(1,1),(1,2)])]
 --
 -- >>> colourShapesToPicture []
--- >>> blank
-
+-- blank
 
 colourShapesToPicture :: [ColourShape] -> Picture
 colourShapesToPicture list = case list of
