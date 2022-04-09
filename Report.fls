@@ -323,6 +323,7 @@ INPUT C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts
 OUTPUT Report.toc
 OUTPUT Report.pdf
 INPUT C:\Users\Jacob Bos\AppData\Local\MiKTeX\pdftex\config\pdftex.map
+INPUT C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT .\program.png
 INPUT .\program.png
@@ -331,7 +332,6 @@ INPUT .\program.png
 INPUT .\program.png
 INPUT .\program.png
 INPUT .\program.png
-INPUT C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT Report.aux
 INPUT C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\Jacob Bos\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb

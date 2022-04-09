@@ -110,19 +110,6 @@ shapeToPicture shape = case shape of
 colourShapeToPicture :: ColourShape -> Picture
 colourShapeToPicture (shape,colour) = coloured (colourNameToColour colour) (shapeToPicture shape)
 
-
---redundant code, didn't use colourNameToColour initially
-{-colourShapeToPicture (colourshape) = case colourshape of
- (shape,Black)   -> coloured black (shapeToPicture shape)
- (shape,Red)     -> coloured red (shapeToPicture shape)
- (shape,Orange)  -> coloured orange (shapeToPicture shape)
- (shape,Yellow)  -> coloured yellow (shapeToPicture shape)
- (shape,Green)   -> coloured green (shapeToPicture shape)
- (shape,Blue)    -> coloured blue (shapeToPicture shape)
- (shape,Purple)  -> coloured purple (shapeToPicture shape)
- (shape,White)   -> coloured white (shapeToPicture shape)-}
-
-
 -- TASK 2D
 
 -- / Test of colourshapes to picture
