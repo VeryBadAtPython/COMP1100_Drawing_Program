@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1649593930 "c:/assignment1/Report.tex" "Report.pdf" "Report" 1649593932
+["pdflatex"] 1649594402 "c:/assignment1/Report.tex" "Report.pdf" "Report" 1649594405
   "C:/Users/Jacob Bos/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1639528236 9728300 18a23bbaa03a3ed6cd7574c7f130500f ""
   "C:/Users/Jacob Bos/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1648967882 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -62,9 +62,9 @@
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1622550326 12689 a1a7b2795918756dcb9c9cbfacc4d9c7 ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1622550326 31530 f9ba11d1c179e918d577463ebdb887ca ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "Report.aux" 1649593932 1154 246a0e7de7990d5cc49e0180a500b349 "pdflatex"
-  "Report.toc" 1649593932 630 d0369c28c3bff0823cc27c238a4aae7f "pdflatex"
-  "c:/assignment1/Report.tex" 1649593928 9598 cafa063209e15bf98339636e2c034311 ""
+  "Report.aux" 1649594405 1154 246a0e7de7990d5cc49e0180a500b349 "pdflatex"
+  "Report.toc" 1649594405 630 d0369c28c3bff0823cc27c238a4aae7f "pdflatex"
+  "c:/assignment1/Report.tex" 1649594400 9601 08a00523235e56077c36d477d410295f ""
   "program.png" 1649418266 35887 2c87ca3d33a558c58106fd5da78125df ""
   (generated)
   "Report.aux"
