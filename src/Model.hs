@@ -1,4 +1,5 @@
 --- Copyright 2022 The Australian National University, All rights reserved
+-- Jacob Bos u7469354, 2022, Assignment 1
 
 module Model where
 

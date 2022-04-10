@@ -1,4 +1,5 @@
 --- Copyright 2022 The Australian National University, All rights reserved
+-- Jacob Bos u7469354, 2022, Assignment 1
 
 module Controller where
 
@@ -71,7 +72,7 @@ pointRel (Model shapes tool colour) (x,y) = case tool of
   (PolygonTool list)              -> Model shapes (PolygonTool ((x,y):list)) colour
   (CircleTool (Just k))           -> Model (((Circle k (x,y)),colour):shapes) (CircleTool Nothing) colour
   (TriangleTool (Just k))         -> Model (((Triangle k (x,y)),colour):shapes) (TriangleTool Nothing) colour
-  (RectangleTool scale (Just k))  -> Model (((Rectangle scale k (x,y)),colour):shapes) (RectangleTool k Nothing) colour
+  (RectangleTool scale (Just k))  -> Model (( (Rectangle scale k (x,y)) , colour):shapes) (RectangleTool scale Nothing) colour
   (CapTool (Just k) Nothing)      -> Model shapes (CapTool (Just k) (Just (x,y))) colour
   (CapTool (Just k) (Just m))     -> Model (((Cap k m y),colour):shapes) (CapTool Nothing Nothing) colour
   _                               -> (Model shapes tool colour)
