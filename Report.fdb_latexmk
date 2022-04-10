@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1649570802 "c:/assignment1/Report.tex" "Report.pdf" "Report" 1649570805
+["pdflatex"] 1649592579 "c:/assignment1/Report.tex" "Report.pdf" "Report" 1649592581
   "C:/Users/Jacob Bos/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1639528236 9728300 18a23bbaa03a3ed6cd7574c7f130500f ""
   "C:/Users/Jacob Bos/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1648967882 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -29,6 +29,7 @@
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1583523400 6501 4011d89d9621e0b0901138815ba5ff29 ""
@@ -61,9 +62,9 @@
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1622550326 12689 a1a7b2795918756dcb9c9cbfacc4d9c7 ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1622550326 31530 f9ba11d1c179e918d577463ebdb887ca ""
   "C:/Users/Jacob Bos/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "Report.aux" 1649570805 1441 2a57106d90622c9a893fa07a3cf0434c "pdflatex"
-  "Report.toc" 1649570805 704 a534c8e25abc8e74b96426f6b1266cf1 "pdflatex"
-  "c:/assignment1/Report.tex" 1649570799 10578 eecd63792c82cbe7e737369a1489eb21 ""
+  "Report.aux" 1649592581 1154 246a0e7de7990d5cc49e0180a500b349 "pdflatex"
+  "Report.toc" 1649592581 630 d0369c28c3bff0823cc27c238a4aae7f "pdflatex"
+  "c:/assignment1/Report.tex" 1649592577 9597 53f53fa97654b0d602b0d885de87669f ""
   "program.png" 1649418266 35887 2c87ca3d33a558c58106fd5da78125df ""
   (generated)
   "Report.aux"
