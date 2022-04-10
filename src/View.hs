@@ -76,7 +76,7 @@ distance (x1,y1) (x2,y2) = sqrt(((x2-x1)**2)+((y2-y1)**2))
 -- (3.0,1.0)
 
 otherTriPoint :: Point -> Point -> Point
-otherTriPoint (x1,y1) (x2,_) = (2*x2-x1,y1)
+otherTriPoint (x1,_) (x2,y2) = (2*x1-x2,y2)
 
 -- /Shape to pic test
 --
