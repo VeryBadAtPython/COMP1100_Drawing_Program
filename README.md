@@ -71,41 +71,6 @@ lists, which is covered in the [Week 5 lab]({%link _labs/05.md %}).
   </tbody>
 </table>
 
-**Part A** of the assignment requires you to complete Task 1.
-**Part B** of the assignment requires you to complete all assigned tasks. As
-you complete each task (or even each function within a task),
-once your code compiles without errors, you
-should commit and push your work with a sensible commit message.
-
-
-{:.msg-info}
-The purpose of Part A is to give you an opportunity to collect
-feedback on your code and your progress in the course, and for us to
-give you an indicative mark for your work so far. This will be
-returned to you before the census date. Part A will be re-marked
-alongside your Part B submission, giving you a final mark for the
-assignment.
-
----
-
-## Getting Started
-1. Fork the assignment repository and create a project for it in
-   VSCodium, following the same steps as in [Lab
-   2]({% link _labs/02.md %}. The
-   assignment repository is at
-   <https://gitlab.cecs.anu.edu.au/comp1100/2022s1/2022s1studentfiles/Assignment1>.
-
-2. Add **our** version of the repository as a *remote* called
-   `upstream`. This allows us to provide additional fixes in the unlikely case that they
-   are required. You do this by doing the following:
-   - Go to the command palette in VSCode (or VSCodium) by pressing `Ctrl + Shift + p`
-   - Type `git remote`
-   - Click **Git: Add Remote**
-   - Enter `upstream` into the box for the remote name
-   - Put the following URL as the remote url: `https://gitlab.cecs.anu.edu.au/comp1100/2022s1/2022s1studentfiles/Assignment1.git`.
-
----
-
 ## Overview of the Repository
 
 Most of your code will be written to Haskell files in the `src/`
@@ -208,7 +173,7 @@ assignment, it will respond to the following actions:
 
 ---
 
-## Task 1: Helper Functions (COMP1100: 20 marks, COMP1130: 10 marks)
+## Task 1: Helper Functions
 
 The easiest way to solve a large problem is often to break it apart
 into smaller, easier problems. Programming is the same. In this task
@@ -271,21 +236,6 @@ only briefly covered lists. You can write the `PolygonTool` case for
 `nextTool` without using list recursion. Use `[]` to match an empty
 list. In a subsequent case, give the entire list a name like `points`
 to match any nonempty list (or find a way to use the `_` pattern!).
-
----
-
-**Part A ends here.**
-
----
-
-### Submitting Part A
-
-Your submission for Part A should include implementations of
-`toolToLabel`, `nextColour`, and `nextTool` that
-compile without warnings and pass the tests run by `cabal v2-test`.
-You are welcome to continue working on Part B of your assignment
-and committing and pushing changes, so long as your code continues 
-to compile without errors and the tests continue to pass.
 
 ---
 
@@ -464,59 +414,6 @@ code to implement these. A few hints:
 * Think back to Task 1.
 * `Backspace`/`Delete` with no shapes drawn should not crash the program.
 * Nor should any other unexpected input. Try to test some ``unexpected'' cases.
-
-## Task 4: 1130 Extensions (COMP1130 Only: 30 Marks)
-
-COMP1100 students are welcome to attempt extensions so long as that does not inhibit 
-the function of tasks 1-4, but will not gain marks for completing them.
- 
-COMP1130 students will need to complete *two* of the *five* extensions from the pool below. 
-If you attempt more than two, you must indicate which two you wish to be marked. Otherwise, 
-we will mark the the first extensions you have completed in the order they appear in this 
-document. 
-
-If you change the behaviour of tool or colour switching, you may want to adjust the tests in 
-`tests/ShapesTest.hs' so they continue to pass. They *must* continue to compile without errors.
-
-*Note:* Extension functionality must be executed through the codeworld API just like 
-the rest of the assignment. Interactions should be received through the `handleEvent` 
-function, which you will need to modify. If you need to add argments to the model, please 
-do so after the existing ones: `data Model = Model [ColourShape] Tool ColourName YourArgument1 YourArgument2 ...`
-
-### Task 4.1: Save Points
-Allow the user to save a drawing by clicking a key, so that they can return to that
-picture (removing any changes made since) by clicking another key. The user should be
-able to make any number of saves, and return to each of them in turn. For example, if they
-save once, then a second time, there should be some means to return to the 
-picture they had at the time of the first save.
-
-### Task 4.2: Preview
-Preview shapes as the user draws them. If the user has started to draw a shape, then you
-should show the shape currently being drawn using a hollow (not solid) shape. When drawing
-a cap, you should able to see the defining circle on the initial drag-and-release followed
-by the circle cut at the current position of the pointer (i.e., how the cap would look 
-were you to click at the current location of the mouse). 
-
-### Task 4.3: Colour Picker
-Add a tool allowing users to change the colour in use by clicking on part of the picture
-with that colour. For example, if they click inside a red circle the colour in use
-should change to (or remain at) red. There should be some sensible default behaviour if the
-user clicks on a part of the picture that is not drawn on.
-You may ignore non-convex polygons for this task; adding this functionality will not
-attract further marks, but is an interesting challenge!
-
-### Task 4.4: Regular polygons
-Add a tool that draws regular polygons with any number of sides (equilateral triangles,
-squares, etc...). The user should be able to modify how many sides will be drawn, and
-draw with a single click-drag-and-release from the centre of the polygon to one of its vertices.
-
-### Task 4.5: Animation
-Your model need not only react to user inputs; it can also react to time passing, which
-allows you to animate your pictures! You may choose which way(s) the shapes and/or
-colours in your pictures change over time, although the animation must be dynamic
-or depend on the picture in the model - a pre-defined repeating animation would not be sufficient.
-Users should be able to turn animations on and off. Please be mindful of the speed at 
-which your pictures change, so that you do not create an unpleasantly fast strobe-like effect.
 
 
 ---
@@ -725,55 +622,3 @@ science background.
 * Text should be at least 1.5 spaced.
 
 ---
-
-## Communicating
-
-**Do not** post your code publicly, either on Piazza or via other
-forums. Posts on Piazza trigger emails to all students, so if by
-mistake you post your code publicly, others will have access to your
-code and you may be held responsible for plagiarism.
-
-Once again, and we cannot stress this enough: **do not post your code
-publicly** . If you need help with your code, post it *privately* to the
-instructors.
-
-When brainstorming with your friends, **do not share code**. There
-might be pressure from your friends, but this is for both your and
-their benefit. Anything that smells of plagiarism will be investigated
-and there may be serious consequences.
-
-Sharing concepts and sketches is perfectly fine, but sharing should stop
-before you risk handing in suspiciously similar solutions.
-
-Course staff will not look at assignment code unless it is posted
-**privately** in piazza, or shared in a drop-in consultation.
-
-Course staff will typically give assistance by asking questions,
-directing you to relevant exercises from the labs, or definitions and
-examples from the lectures.
-
-{:.msg-info}
-Before the assignment is due, course staff will not give individual
-tips on writing functions for the assignment or how your code can be
-improved. We will help you get unstuck by asking questions and
-pointing you to relevant lecture and lab material. You will receive
-feedback on you work when marks are released.
-
-
-## Submission Checklist
-
-Once you have finished your assignment, and preferably 24 hours prior
-to the deadline, you should make sure that:
-
-* You have fully read and understand the entire assignment
-  specification.
-* Your work has been pushed to GitLab.
-* Your program compiles and runs, including the `cabal v2-test` test suite.
-* Your program works on the lab machines - if the program does not
-  work on the lab machines, it might fail tests used by the
-  instructors. You can use the [VDI](https://comp.anu.edu.au/courses/comp1100/resources/02-working-remotely/) for these tests.
-* You have proof-read and spell-checked your report.
-* The report is in PDF format, located at the root of your project on
-  GitLab and named `Report.pdf`. That capital `R` is important - Linux
-  uses a case-sensitive file system. Otherwise, it may not be marked.
-  Check this **on Gitlab** as the full filename may not always appear in your document.
